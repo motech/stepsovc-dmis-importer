@@ -1,0 +1,18 @@
+*.impl
+.idea
+target
+*.ipr
+*.iws
+*.iml
+.classpath
+.project
+.settings/
+.rms
+ *~
+*#
+.*~
+.*#
+.DS_Store
+logs
+*/build/*
+*.log
