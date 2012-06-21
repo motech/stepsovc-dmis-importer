@@ -32,25 +32,25 @@ public class GenerateSqlScripts {
         stringBuffer.append("BEGIN TRANSACTION\n");
         stringBuffer.append("BEGIN TRY\n");
         String elseExists="END\n" +
-                "ELSE \n" +
-                "BEGIN \n";
+                "ELSE\n" +
+                "BEGIN\n";
         String ifExistsEnd="END\n";
         csvReader.readNext();
         List<String[]> rowData =csvReader.readAll();
         for(String[] row : rowData){
-            stringBuffer.append("IF EXISTS(Select 1 from tbl_referral_receipt  where rr_id='"+ row[0] +"')\n BEGIN  \n");
+            stringBuffer.append("IF EXISTS(Select 1 from tbl_referral_receipt  where rr_id='"+ row[0] +"')\n BEGIN\n");
             stringBuffer.append(generateUpdateScripts(row));
             stringBuffer.append(elseExists);
             stringBuffer.append(generateInsertScripts(row));
             stringBuffer.append("\r\n");
             stringBuffer.append(ifExistsEnd);
         }
-        stringBuffer.append("COMMIT TRANSACTION \n");
-        stringBuffer.append("END TRY \n");
-        stringBuffer.append("BEGIN CATCH \n");
-        stringBuffer.append("PRINT ERROR_MESSAGE(); \n");
-        stringBuffer.append("ROLLBACK TRANSACTION \n");
-        stringBuffer.append("END CATCH \n");
+        stringBuffer.append("COMMIT TRANSACTION\n");
+        stringBuffer.append("END TRY\n");
+        stringBuffer.append("BEGIN CATCH\n");
+        stringBuffer.append("PRINT ERROR_MESSAGE();\n");
+        stringBuffer.append("ROLLBACK TRANSACTION\n");
+        stringBuffer.append("END CATCH\n");
         stringBuffer.append("GO");
 
         generateSQLFile(stringBuffer,sqlFileName);

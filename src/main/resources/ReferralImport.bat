@@ -37,6 +37,3 @@ EXIT /B 1
 :ERROR3
 ECHO --Error  occured while  inserting referral data to Production database--
 EXIT /B 1
-
-
-
