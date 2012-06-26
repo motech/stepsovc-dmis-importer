@@ -2,7 +2,7 @@ BEGIN TRANSACTION
 BEGIN TRY
 IF EXISTS(Select 1 from tbl_referral_receipt  where rr_id='a')
  BEGIN
-UPDATE tbl_referral_receipt SET [rr_referrer_name] ='2',[rr_referral_date] ='2012-05-14 00:00:00.000',[rr_follow_up] ='1',[rr_signed] ='1',[rr_signed_date] ='2012-05-14 00:00:00.000',[rr_hlt_art_rec] =1,[rr_hlt_art_ref] =1,[rr_hlt_condoms_rec] =1,[rr_hlt_condoms_ref] =1,[rr_hlt_ct_rec] =1,[rr_hlt_ct_ref] =1,[rr_hlt_diag_rec] =1,[rr_hlt_diag_ref] =1,[rr_hlt_fp_rec] =1,[rr_hlt_fp_ref] =1,[rr_hlt_hosp_rec] =1,[rr_hlt_hosp_ref] =1,[rr_hlt_other_hlt] ='1',[rr_hlt_other_hlt_rec] =1,[rr_hlt_other_hlt_ref] =1,[rr_hlt_pain_rec] =1,[rr_hlt_pain_ref] =1,[rr_hlt_pmtct_rec] =1,[rr_hlt_pmtct_ref] =1,[rr_hlt_sex_trans_rec] =1,[rr_hlt_sex_trans_ref] =1,[ben_id] ='4cf5b740-558d-4802-8108-e3e2d1713621',[cg_id] ='81b33d5d-6bd2-4393-81e2-20b825d49a45',[usr_update_date]=GETDATE() WHERE rr_id='a'
+UPDATE tbl_referral_receipt SET [rr_referrer_name] ='2',[rr_referral_date] ='2012-05-14 00:00:00.000',[rr_follow_up] ='1',[rr_signed] ='1',[rr_signed_date] ='2012-05-14 00:00:00.000',[rr_hlt_art_rec] =1,[rr_hlt_art_ref] =1,[rr_hlt_condoms_rec] =1,[rr_hlt_condoms_ref] =1,[rr_hlt_ct_rec] =1,[rr_hlt_ct_ref] =1,[rr_hlt_diag_rec] =1,[rr_hlt_diag_ref] =1,[rr_hlt_fp_rec] =1,[rr_hlt_fp_ref] =1,[rr_hlt_hosp_rec] =1,[rr_hlt_hosp_ref] =1,[rr_hlt_other_hlt] ='1',[rr_hlt_other_hlt_rec] =1,[rr_hlt_other_hlt_ref] =1,[rr_hlt_pain_rec] =1,[rr_hlt_pain_ref] =1,[rr_hlt_pmtct_rec] =1,[rr_hlt_pmtct_ref] =1,[rr_hlt_sex_trans_rec] =1,[rr_hlt_sex_trans_ref] =1,[ben_id] ='4cf5b740-558d-4802-8108-e3e2d1713621',[cg_id] ='81b33d5d-6bd2-4393-81e2-20b825d49a45',[usr_update_id]='motech-stepsovc',[usr_update_date]=GETDATE() WHERE rr_id='a'
 END
 ELSE
 BEGIN
@@ -10,7 +10,7 @@ INSERT INTO [STEPS_OVC_CHONGWE].[dbo].[tbl_referral_receipt]([rr_id],[rr_referre
 END
 IF EXISTS(Select 1 from tbl_referral_receipt  where rr_id='b')
  BEGIN
-UPDATE tbl_referral_receipt SET [rr_referrer_name] ='Test',[rr_referral_date] ='2012-05-14 00:00:00.000',[rr_follow_up] ='2',[rr_signed] ='1',[rr_signed_date] ='2012-05-14 00:00:00.000',[rr_hlt_art_rec] =1,[rr_hlt_art_ref] =1,[rr_hlt_condoms_rec] =1,[rr_hlt_condoms_ref] =1,[rr_hlt_ct_rec] =1,[rr_hlt_ct_ref] =1,[rr_hlt_diag_rec] =1,[rr_hlt_diag_ref] =1,[rr_hlt_fp_rec] =1,[rr_hlt_fp_ref] =1,[rr_hlt_hosp_rec] =1,[rr_hlt_hosp_ref] =1,[rr_hlt_other_hlt] ='0',[rr_hlt_other_hlt_rec] =1,[rr_hlt_other_hlt_ref] =1,[rr_hlt_pain_rec] =1,[rr_hlt_pain_ref] =1,[rr_hlt_pmtct_rec] =1,[rr_hlt_pmtct_ref] =1,[rr_hlt_sex_trans_rec] =1,[rr_hlt_sex_trans_ref] =1,[ben_id] ='e57ad9f2-98da-42b1-962b-6b9e636641f0',[cg_id] ='b9f4565f-62b9-4630-8133-cdd3a1b463b8',[usr_update_date]=GETDATE() WHERE rr_id='b'
+UPDATE tbl_referral_receipt SET [rr_referrer_name] ='Test',[rr_referral_date] ='2012-05-14 00:00:00.000',[rr_follow_up] ='2',[rr_signed] ='1',[rr_signed_date] ='2012-05-14 00:00:00.000',[rr_hlt_art_rec] =1,[rr_hlt_art_ref] =1,[rr_hlt_condoms_rec] =1,[rr_hlt_condoms_ref] =1,[rr_hlt_ct_rec] =1,[rr_hlt_ct_ref] =1,[rr_hlt_diag_rec] =1,[rr_hlt_diag_ref] =1,[rr_hlt_fp_rec] =1,[rr_hlt_fp_ref] =1,[rr_hlt_hosp_rec] =1,[rr_hlt_hosp_ref] =1,[rr_hlt_other_hlt] ='0',[rr_hlt_other_hlt_rec] =1,[rr_hlt_other_hlt_ref] =1,[rr_hlt_pain_rec] =1,[rr_hlt_pain_ref] =1,[rr_hlt_pmtct_rec] =1,[rr_hlt_pmtct_ref] =1,[rr_hlt_sex_trans_rec] =1,[rr_hlt_sex_trans_ref] =1,[ben_id] ='e57ad9f2-98da-42b1-962b-6b9e636641f0',[cg_id] ='b9f4565f-62b9-4630-8133-cdd3a1b463b8',[usr_update_id]='motech-stepsovc',[usr_update_date]=GETDATE() WHERE rr_id='b'
 END
 ELSE
 BEGIN

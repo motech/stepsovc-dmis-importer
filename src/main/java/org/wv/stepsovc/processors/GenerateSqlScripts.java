@@ -96,6 +96,7 @@ public class GenerateSqlScripts {
                  ",[rr_hlt_sex_trans_ref] ="+row[26]+
                  ",[ben_id] ='"+row[27]+"'"+
                  ",[cg_id] ='"+row[28]+"'"+
+                 ",[usr_update_id]='motech-stepsovc'"+
                  ",[usr_update_date]=GETDATE()"+
                  " WHERE rr_id='"+row[0]+"'\n";
     }
