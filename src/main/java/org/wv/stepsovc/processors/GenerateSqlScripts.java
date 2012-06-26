@@ -85,7 +85,7 @@ public class GenerateSqlScripts {
                  ",[rr_hlt_fp_ref] ="+row[15]+
                  ",[rr_hlt_hosp_rec] ="+row[16]+
                  ",[rr_hlt_hosp_ref] ="+row[17]+
-                 ",[rr_hlt_other_hlt] ="+row[18]+
+                 ",[rr_hlt_other_hlt] ='"+row[18]+"'"+
                  ",[rr_hlt_other_hlt_rec] ="+row[19]+
                  ",[rr_hlt_other_hlt_ref] ="+row[20]+
                  ",[rr_hlt_pain_rec] ="+row[21]+
@@ -173,7 +173,7 @@ public class GenerateSqlScripts {
                 ")" +
                 "VALUES" +
                 "('"+row[0]+"','"+row[1]+"','"+row[2]+"','"+row[3]+"','"+row[4]+"','"+row[5]+"',"+row[6]+","+row[7]+","+row[8]+","+row[9]+","+row[10]+","+
-                row[11]+","+row[12]+","+row[13]+","+row[14]+","+row[15]+","+row[16]+","+row[17]+","+row[18]+","+row[19]+","+row[20]+","+
+                row[11]+","+row[12]+","+row[13]+","+row[14]+","+row[15]+","+row[16]+","+row[17]+",'"+row[18]+"',"+row[19]+","+row[20]+","+
                 row[21]+","+row[22]+","+row[23]+","+row[24]+","+row[25]+","+row[26]+",'"+row[27]+"','"+row[28]+"','','','','','','','','','','',"+ 0+","+0+","+
                 0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+
                 0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+
