@@ -96,6 +96,7 @@ public class GenerateSqlScripts {
                  ",[rr_hlt_sex_trans_ref] ="+row[26]+
                  ",[ben_id] ='"+row[27]+"'"+
                  ",[cg_id] ='"+row[28]+"'"+
+                 ",[usr_update_date]=GETDATE()"+
                  " WHERE rr_id='"+row[0]+"'\n";
     }
 
@@ -169,7 +170,11 @@ public class GenerateSqlScripts {
                 ",[rr_psych_pos_liv_ref]" +
                 ",[rr_psych_spiritual_rec]" +
                 ",[rr_psych_spiritual_ref]" +
-                ",[rr_deleted]" +
+                ",[rr_deleted]," +
+                "[usr_create_id]," +
+                "[usr_update_id]," +
+                "[usr_create_date]," +
+                "[usr_update_id]" +
                 ")" +
                 "VALUES" +
                 "('"+row[0]+"','"+row[1]+"','"+row[2]+"','"+row[3]+"','"+row[4]+"','"+row[5]+"',"+row[6]+","+row[7]+","+row[8]+","+row[9]+","+row[10]+","+
@@ -177,7 +182,7 @@ public class GenerateSqlScripts {
                 row[21]+","+row[22]+","+row[23]+","+row[24]+","+row[25]+","+row[26]+",'"+row[27]+"','"+row[28]+"','','','','','','','','','','',"+ 0+","+0+","+
                 0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+
                 0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+0+","+
-                0+","+0+","+0+","+0+","+0+","+0+","+0+");" ;
+                0+","+0+","+0+","+0+","+0+","+0+","+0+",'motech-stepsovc','motech-stepsovc',GETDATE(),GETDATE()"+" );" ;
 
     }
 
