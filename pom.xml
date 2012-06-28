@@ -55,6 +55,18 @@
         </dependency>
     </dependencies>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>motech-repo</id>
+            <name>Motech Maven Repository</name>
+            <url>http://nexus.motechproject.org/content/repositories/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+
     <distributionManagement>
         <repository>
             <id>motech.nexus</id>
