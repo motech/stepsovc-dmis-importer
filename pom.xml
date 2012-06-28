@@ -6,7 +6,9 @@
 
     <groupId>stepsovc-dmis-importer</groupId>
     <artifactId>stepsovc-dmis-importer</artifactId>
-    <version>1.0</version>
+    <name>stepsovc-dmis-importer</name>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
 
 
     <repositories>
