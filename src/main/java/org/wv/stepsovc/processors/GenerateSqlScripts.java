@@ -104,7 +104,7 @@ public class GenerateSqlScripts {
 
     public String generateInsertScripts(String row[]) {
 
-        return "INSERT INTO [STEPS_OVC_CHONGWE].[dbo].[tbl_referral_receipt]" +
+        return "INSERT INTO tbl_referral_receipt" +
                 "([rr_id]" +
                 ",[rr_referrer_name]" +
                 ",[rr_referral_date]" +
