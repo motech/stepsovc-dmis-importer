@@ -3,7 +3,7 @@ CLS
 @Echo off
 echo *** Backing up production database ***
 
-sqlcmd -b -d STEPS_OVC -C -U 'Jean Kachaka'  -S JEANKACHAKA-PC\FGG -Q " BACKUP DATABASE STEPS_OVC TO DISK='C:\MHealth-STEPSOVC\steps_ovc.bak'WITH FORMAT"
+sqlcmd -b -d STEPS_OVC -C -E -S JEANKACHAKA-PC\FGG  -Q "BACKUP DATABASE STEPS_OVC TO DISK='C:\MHealth-STEPSOVC\backup\STEPS_OVC.bak'WITH FORMAT"
 IF %ERRORLEVEL% NEQ 0 goto :ERROR1
 echo ***Backup Complete***
 
@@ -17,7 +17,7 @@ echo ***Insert scripts generated at C:\MHealth-STEPSOVC\insertscripts.sql***
 
 echo *** Inserting referrals to sqlserver ***
 
-sqlcmd -S JEANKACHAKA-PC\FGG -d STEPS_OVC -U 'Jean Kachaka'  -i C:\MHealth-STEPSOVC\insertscripts.sql
+sqlcmd -S JEANKACHAKA-PC\FGG -d STEPS_OVC -E  -i C:\MHealth-STEPSOVC\insertscripts.sql
 IF %ERRORLEVEL% NEQ 0 goto :ERROR3
 
 echo *** Process completed ***
