@@ -3,21 +3,21 @@ CLS
 @Echo off
 echo *** Backing up production database ***
 
-sqlcmd -b -d STEPS_OVC -C -U 'Jean Kachaka'  -S JEANKACHAKA-PC\FGG -Q " BACKUP DATABASE STEPS_OVC TO DISK='C:\MHealth-STEPSOVC\steps_ovc.bak'WITH FORMAT"
+sqlcmd -b -d STEPS_OVC_CHONGWE -C -U steps_user -P !ABCD1234 -S ISNODE02\SQLExpress -Q " BACKUP DATABASE STEPS_OVC_CHONGWE TO DISK='E:\Steps_ovc\bkup\steps_ovc_chongwe.bak'WITH FORMAT"
 IF %ERRORLEVEL% NEQ 0 goto :ERROR1
 echo ***Backup Complete***
 
 
 echo *** Generating referral insert scripts from csv ***
 
-java -jar C:\MHealth-STEPSOVC\stepsovc-dmis-importer-1.0.jar C:\MHealth-STEPSOVC\referral.csv C:\MHealth-STEPSOVC\insertscripts.sql
+java -jar e:\Steps_ovc\stepsovc-dmis-importer-1.0.jar e:\Steps_ovc\referral.csv e:\Steps_ovc\insertscripts.sql
 
 IF %ERRORLEVEL% NEQ 0 goto :ERROR2
-echo ***Insert scripts generated at C:\MHealth-STEPSOVC\insertscripts.sql***
+echo ***Insert scripts generated at e:\Steps_ovc\insertscripts.sql***
 
 echo *** Inserting referrals to sqlserver ***
 
-sqlcmd -S JEANKACHAKA-PC\FGG -d STEPS_OVC -U 'Jean Kachaka'  -i C:\MHealth-STEPSOVC\insertscripts.sql
+sqlcmd -S ISNODE02\SQLEXPRESS -d STEPS_OVC_CHONGWE -U steps_user -P !ABCD1234 -i e:\Steps_ovc\insertscripts.sql
 IF %ERRORLEVEL% NEQ 0 goto :ERROR3
 
 echo *** Process completed ***
