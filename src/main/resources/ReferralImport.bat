@@ -4,7 +4,6 @@ CLS
 
 @Echo off
 
-IF "%1"=="" goto :ERROR4
 
 echo *** Backing up production database ***
 
@@ -28,10 +27,7 @@ echo *** Generating referral insert scripts from csv ***
 
 
 
-java -jar C:\MHealth-STEPSOVC\stepsovc-dmis-importer-1.0-SNAPSHOT-jar-with-dependencies.jar %1 C:\MHealth-STEPSOVC\insertscripts.sql
-
-
-
+java -jar C:\MHealth-STEPSOVC\stepsovc-dmis-importer.jar C:\MHealth-STEPSOVC\Referrals\referrals.csv C:\MHealth-STEPSOVC\insertscripts.sql
 
 IF %ERRORLEVEL% NEQ 0 goto :ERROR2
 
@@ -49,8 +45,10 @@ sqlcmd -S JEANKACHAKA-PC\FGG -d STEPS_OVC -E  -i C:\MHealth-STEPSOVC\insertscrip
 
 IF %ERRORLEVEL% NEQ 0 goto :ERROR3
 
-echo *** Process completed ***
+IF Exist "C:\MHealth-STEPSOVC\insertscripts.sql" del "C:\MHealth-STEPSOVC\insertscripts.sql"
 
+echo *** Process completed  Successfully***
+PAUSE
 EXIT /B 1
 
 :END
@@ -59,43 +57,17 @@ EXIT /B 1
 
 
 :ERROR1
-
 ECHO --Error  occured while  backing up  Production database--
-
-EXIT /B 1
-
-
-
-
-
-
+PAUSE
+EXIT /B %ERRORLEVEL%
 
 :ERROR2
-
 ECHO --Error  occured while  generating sql scripts--
-
-EXIT /B 1
-
-
-
-
-
+PAUSE
+EXIT /B %ERRORLEVEL%
 
 
 :ERROR3
-
 ECHO --Error  occured while  inserting referral data to Production database--
-
-EXIT /B 1
-
-
-
-
-:ERROR4
-
-ECHO --Error:  Please pass the path of the referral csv file.
-
-ECHO Eg : ReferralImport.bat "C:\MHealth-STEPSOVC\Referrals\referral.csv"
-
-EXIT /B 1
-
+PAUSE
+EXIT /B %ERRORLEVEL%
